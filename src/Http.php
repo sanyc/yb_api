@@ -1,6 +1,6 @@
 <?php
 
-namespace sanyc\ybservice;
+namespace think;
 
 class Http
 {

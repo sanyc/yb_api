@@ -1,6 +1,6 @@
 <?php
 use think\paginator\driver\Bootstrap;
-use sanyc\ybservice\Http;
+use think\Http;
 
 if (!function_exists('http')) {
     /**
@@ -47,7 +47,7 @@ if (!function_exists('yb_get_list_page')) {
     
     function yb_get_list_page($api_name, $query = [])
     {
-        return \sanyc\ybservice\YbService::getClientInstance()->getArray($api_name, $query);
+        return \think\YbService::getClientInstance()->getArray($api_name, $query);
     }
 }
 
@@ -55,7 +55,7 @@ if (!function_exists('yb_get_list_json')) {
     
     function yb_get_list_json($api_name, $query = [])
     {
-        return \sanyc\ybservice\YbService::getClientInstance()->getJson($api_name, $query);
+        return \think\YbService::getClientInstance()->getJson($api_name, $query);
     }
 }
 
@@ -63,7 +63,7 @@ if (!function_exists('yb_get_list_array')) {
     
     function yb_get_list_array($api_name, $query = [])
     {
-        return \sanyc\ybservice\YbService::getClientInstance()->getJson($api_name, $query, true);
+        return \think\YbService::getClientInstance()->getJson($api_name, $query, true);
     }
 }
 
