@@ -20,11 +20,10 @@ class YbService
 
     protected $headers = [];
 
-    public static function getClientInstance()
+    public static function getClientInstance($_config = [])
     {
         if (!self::$client instanceof self) {         
             if (!cache('?access_token')) {
-                $_config = config('yb');
                 $token   = json_decode(http('get', 'user/token', $_config), true);
                 cache('access_token', $token['data']['authorization'], $token['data']['exp'] - 300);
             }
