@@ -55,7 +55,7 @@ if (!function_exists('yb_get_list_json')) {
     
     function yb_get_list_json($api_name, $query = [])
     {
-        return \think\YbService::getClientInstance()->getJson($api_name, $query);
+        return yb_get($api_name, $query);
     }
 }
 
@@ -63,7 +63,23 @@ if (!function_exists('yb_get_list_array')) {
     
     function yb_get_list_array($api_name, $query = [])
     {
-        return \think\YbService::getClientInstance()->getJson($api_name, $query, true);
+        return yb_get($api_name, $query, true);
+    }
+}
+
+if (!function_exists('yb_get')) {
+    
+    function yb_get($api_name, $query = [], $to_array = false)
+    {
+        return \think\YbService::getClientInstance()->getJson($api_name, $query, $to_array);
+    }
+}
+
+if (!function_exists('yb_post')) {
+    
+    function yb_post($api_name, $query = [])
+    {
+        return \think\YbService::getClientInstance()->post($api_name, $query);
     }
 }
 
