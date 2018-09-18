@@ -1,0 +1,26 @@
+{
+    "name": "sanyc/yb_api",
+    "description": "优佰鲜果接口",
+    "type": "think-extend",
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "过客",
+            "email": "niexiaojiang@sina.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "think\\": "src"
+        },
+        "files": [
+            "src/common.php"
+        ]
+    },
+    "extra": {
+        "think-config": {
+            "ybapi": "src/config.php"
+        }
+    },
+    "minimum-stability": "dev"
+}
